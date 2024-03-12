@@ -167,6 +167,7 @@ st.write('all the descriptors (for more information about descriptiors see [docu
 
 # Transformation en dataframe
 #D1 = pd.DataFrame(D1.drop(['ABC', 'ABCGG'], axis=1)) # pour eviter l'affichage du warning...
+D1 = pd.DataFrame(D1) #
 
 # Partie Machine Learning - Estimation du RON avec le modèle 4
 
