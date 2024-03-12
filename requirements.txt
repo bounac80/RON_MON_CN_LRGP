@@ -1,7 +1,7 @@
 matplotlib==3.5.3
 mordred==1.2.0
 rdkit
-joblib==3.5.1
+joblib
 scikit-learn==1.0.2
 plotly.express
 streamlit_ketcher
