@@ -246,8 +246,9 @@ st.write('std_RON: ', std_RON )
 #
 from tensorflow.keras.models import load_model
 #
-model_InChiKey = load_model('Model_InChiKey.h5')
-#
+model_InChiKey = load_model('./Model_InChiKey.h5')
+st.write('TEST 5' )
+#                             
 #
 # dictionnaire des caracteres - on compte également le tiret '-'
 #
@@ -278,7 +279,7 @@ Inchi_Cars_dict = {'A': 0,
  'Y': 24,
  'Z': 25,
  '-': 26 }
-
+st.write('TEST 6' )
 # Takes the 14 first characters of an inchikey and transforms them into a vector with numbers corresponding to the places
 # of the letters in the dictionnary Inchi_cars_dict
 def vectorization(Inchikey):
@@ -294,6 +295,7 @@ for n in range(len(SMILES_Molecules)):
     else:
         Inchikeys.append(smiles_to_Inchikey(SMILES_Molecules))
 Inchikeys = pd.DataFrame(Inchikeys,index = np.arange(0,len(SMILES_Molecules)))
+st.write('TEST 7' )
 #
 # Step 8 : je tokenise toute les notations InChiKey
 #
@@ -301,6 +303,7 @@ Inchikeys_vect  = []
 for x in Inchikeys[0]:
     Inchikeys_vect.append(vectorization(x[:25])) # on prennds les 14 + 10 + tiret = 25
 Inchikeys_vect = np.array(Inchikeys_vect)
+st.write('TEST 8' )
 #
 # Step 9 : j'estime les RON avec le modèle InChiKey - Avec ce modèle les RON sont normalisés
 #
@@ -309,7 +312,7 @@ RON_predit_norm = pd.DataFrame(model_InChiKey.predict(Inchikeys_vect))
 # Step 10 : je dé-normalise les data
 #
 RON_predit_InChiKey = RON_predit_norm * std_RON + mean_RON
-
+st.write('TEST 9' )
 #
 #st.write('RON InChiKey:', RON_predit_InChiKey[0][0].round(1))
 #
