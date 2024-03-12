@@ -7,7 +7,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 st.image('BANNIERE MAIL ehlcathol.png')
-st.title('A robust Deep-Learning model for the estimation of RON')
+st.title('Deep-Learning model based on a QSPR approach for the estimation of RON, MON and CN')
 st.subheader('Method available for any C, H, O, N hydrocarbons')
 st.write("----------------------------------------------------------")
  
