@@ -158,10 +158,11 @@ st.write('number of Nitrogen atom-  N: ', D2[5])
 st.write('exact molecular weight [g/mol]:', D1['MW'])
 
 st.write('all the descriptors (for more information about descriptiors see [documentation](http://mordred-descriptor.github.io/documentation/master/descriptors.html))', D1)
+st.dataframe(D1)
+st.write('exact molecular weight [g/mol]:', D1['ABC'])
 
 # Transformation en dataframe
 D1 = pd.DataFrame(D1)
-st.dataframe(D1)
 
 # Partie Machine Learning - Estimation du RON avec le modèle 4
 
