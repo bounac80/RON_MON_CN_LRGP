@@ -161,6 +161,7 @@ st.write('all the descriptors (for more information about descriptiors see [docu
 
 # Transformation en dataframe
 D1 = pd.DataFrame(D1)
+st.dataframe(D1)
 
 # Partie Machine Learning - Estimation du RON avec le modèle 4
 
