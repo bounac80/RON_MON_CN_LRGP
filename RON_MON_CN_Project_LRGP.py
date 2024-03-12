@@ -348,6 +348,11 @@ st.write('RON:', RON_Final.round(1) , 'at +/- 1 ')
 #
 st.write('MON:', Y_sim_predit_Modele_MON[0].round(1) , 'at +/- 1 ' )
 #
+if SMILES_Molecules == 'C':
+    Y_sim_predit_Modele_CN[0]=4.98
+if SMILES_Molecules == 'CC':
+    Y_sim_predit_Modele_CN[0]=6.79 
+ 
 st.write('CN:', Y_sim_predit_Modele_CN[0].round(1) , 'at +/- 1 ' )
 
 ######################################################################################################
