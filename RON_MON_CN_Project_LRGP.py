@@ -7,7 +7,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 st.image('BANNIERE MAIL ehlcathol.png')
-st.title('Deep-Learning model based on a QSPR approach for the estimation of RON, MON and CN')
+st.title('Deep-Learning for the estimation of RON, MON and CN')
 st.subheader('Method available for any C, H, O, N hydrocarbons')
 st.write("----------------------------------------------------------")
  
@@ -56,7 +56,7 @@ st.write("----------------------------------------------------------")
 ## Deuxième partie sur l'estimation du RON à partir du smile de la molécule
 ######################################################################################################
 
-st.header("_Deep-Learning model for the estimation of RON_")
+st.header("_Model based on a QSPR approach_")
 st.write("")
 
 import rdkit
