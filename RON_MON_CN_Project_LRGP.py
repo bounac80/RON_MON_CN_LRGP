@@ -10,7 +10,7 @@ st.image('BANNIERE MAIL ehlcathol.png')
 st.title('A robust Deep-Learning model for the estimation of RON')
 st.subheader('Method available for any C, H, O, N hydrocarbons')
 st.write("----------------------------------------------------------")
-
+ 
 
 ######################################################################################################
 ## Premiere partie sur l'exploitation de la database experimentale
@@ -217,9 +217,9 @@ import tensorflow.keras as keras
 import os,sys,h5py,json
 from importlib import reload
 #
-from tensorflow.keras import Model
-from tensorflow.keras.layers import Dense, Input,Concatenate,Flatten,Embedding
-from tensorflow.keras.optimizers import Adam
+#from tensorflow.keras import Model
+#from tensorflow.keras.layers import Dense, Input,Concatenate,Flatten,Embedding
+#from tensorflow.keras.optimizers import Adam
 #
 #
 #
@@ -236,8 +236,8 @@ std_RON = DataInfo_model_InChiKey['std_RON']
 #RON_normalised = pd.DataFrame((RON-mean_RON)/std_RON)
 #
 #RON_normalised
-#st.write('mean_RON: ', mean_RON )
-#st.write('std_RON: ', std_RON )
+st.write('mean_RON: ', mean_RON )
+st.write('std_RON: ', std_RON )
 #
 # Step 2 - J'importe le modèle IA InChiKey - Embedding
 #
