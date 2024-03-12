@@ -203,6 +203,7 @@ RON_predit_Mordred = Y_sim_predit_Modele_4
 
 
 
+st.write('TEST 1' )
 
 #####################################################################################################
 # Troisème partie sur l'estimation du RON à partir du smile de la molécule - INCHIKEY
@@ -225,11 +226,13 @@ from importlib import reload
 #
 #  Step 3 - J'importe les data info nécessaires au modèle InChiKey
 #
+st.write('TEST 2' )
 DataInfo_model_InChiKey = joblib.load('./DataInfo_InChiKey_Embedding.joblib')
-
+st.write('TEST 3' )
 #
 #  Step 4 - Je calcule les data nécessaires au modèle InChiKey
 #
+st.write('TEST 4' )
 mean_RON = DataInfo_model_InChiKey['mean_RON']
 std_RON = DataInfo_model_InChiKey['std_RON']
 #
