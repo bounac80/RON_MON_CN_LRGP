@@ -339,13 +339,16 @@ else:
     RON_Final = 0.9 * RON_predit_Mordred[0] + 0.1 * RON_predit_InChiKey[0][0]    
 
 #
-st.write('RON corrected with the InChiKey correction:', RON_Final.round(1) , 'at +/- 1 ')
+st.subheader('Results:')
 #
-st.write('RON with Mordred descriptors:', Y_sim_predit_Modele_4[0].round(1) , 'at +/- 1 ' )
+#st.write('RON corrected with the InChiKey correction:', RON_Final.round(1) , 'at +/- 1 ')
+st.write('RON:', RON_Final.round(1) , 'at +/- 1 ')
 #
-st.write('MON with Mordred descriptors:', Y_sim_predit_Modele_MON[0].round(1) , 'at +/- 1 ' )
+#st.write('RON with Mordred descriptors:', Y_sim_predit_Modele_4[0].round(1) , 'at +/- 1 ' )
 #
-st.write('CN with Mordred descriptors:', Y_sim_predit_Modele_CN[0].round(1) , 'at +/- 1 ' )
+st.write('MON:', Y_sim_predit_Modele_MON[0].round(1) , 'at +/- 1 ' )
+#
+st.write('CN:', Y_sim_predit_Modele_CN[0].round(1) , 'at +/- 1 ' )
 
 ######################################################################################################
 ## Bloc Tampon - Bout de code
