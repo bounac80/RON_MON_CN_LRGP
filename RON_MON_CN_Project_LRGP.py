@@ -241,6 +241,7 @@ std_RON = DataInfo_model_InChiKey['std_RON']
 #RON_normalised
 st.write('mean_RON: ', mean_RON )
 st.write('std_RON: ', std_RON )
+st.write('TEST XX' )
 #
 # Step 2 - J'importe le modèle IA InChiKey - Embedding
 #
