@@ -160,9 +160,9 @@ st.write('exact molecular weight [g/mol]:', D1['MW'])
 st.write('all the descriptors (for more information about descriptiors see [documentation](http://mordred-descriptor.github.io/documentation/master/descriptors.html))', D1)
 #st.dataframe(D1)
 st.write('111111111111111111:', D1['ABC'])
-st.write('222222222222222222:', D1['ABC'][0])
+st.write('222222222222222222:', D1['ABC'].iloc[0])
 dede=3.2
-dede=D1['ABC'][0]
+dede=D1['ABC'].iloc[0]
 st.write('333333:', dede)
 # Transformation en dataframe
 D1 = pd.DataFrame(D1)
