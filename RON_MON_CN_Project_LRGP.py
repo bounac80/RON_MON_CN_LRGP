@@ -167,24 +167,18 @@ D1 = pd.DataFrame(D1)
 import joblib
 import sklearn
 #
-# Importation du modèle ANN avec métadata
+# Importation des differents modèles ANN avec métadata
 #
-model_mordred_457 = joblib.load('./Modele_457.joblib')
-#
-#df_457 =  pd.read_csv('df_457.csv',sep=';')
-#df_457 = df_457.drop('Unnamed: 0', axis=1) # pour retirer la colonne de début qui reste
-#
-#liste_espece_457 = df_457.columns
-
-
+model_mordred_457 = joblib.load('./Modele_457.joblib') # Pour l'estimation des RON
+model_mordred_457_MON = joblib.load('./Modele_MON_457_1_VF.joblib') # Pour l'estimation des MON
+model_mordred_457_CN = joblib.load('./Modele_CN_457_6_VF.joblib') # Pour l'estimation des CN
 #
 # Je ne vais garder que les 457 trouvés avec le modèle RON
 #
 # Lire les noms de colonnes d'un fichier texte dans une liste
 with open('noms_colonnes_457.txt', 'r') as f:
     liste_espece_457 = [ligne.strip() for ligne in f]
-
-
+ 
 # Calcul de Tous Les Descripteurs
 X_sim_Model_4 = All_Mordred_descriptors_1(SMILES_Molecules)
 # Réduction aux colones uniquement mécessaires
@@ -193,10 +187,16 @@ X_sim_Model_4 = X_sim_Model_4[liste_espece_457]
 X_sim_Model_4 = X_sim_Model_4.astype(float)
 # Nettoyage colone n'ayant pas convergé
 X_sim_Model_4 = X_sim_Model_4.fillna(0)
-# Estimation des RON d'après le modèle ANN
+
+
+# Estimation des RON, MON, CN d'après les modèles ANN
 Y_sim_predit_Modele_4 = model_mordred_457.predict(X_sim_Model_4)
+Y_sim_predit_Modele_MON = model_mordred_457_MON.predict(X_sim_Model_4)
+Y_sim_predit_Modele_CN = model_mordred_457_CN.predict(X_sim_Model_4)
 #
-st.write('RON with Mordred descriptors:', Y_sim_predit_Modele_4[0].round(1) , 'at +/- 1 ' )
+#st.write('RON with Mordred descriptors:', Y_sim_predit_Modele_4[0].round(1) , 'at +/- 1 ' )
+#st.write('MON with Mordred descriptors:', Y_sim_predit_Modele_MON[0].round(1) , 'at +/- 1 ' )
+#st.write('CN with Mordred descriptors:', Y_sim_predit_Modele_CN[0].round(1) , 'at +/- 1 ' )
 #
 RON_predit_Mordred = Y_sim_predit_Modele_4
 
@@ -341,6 +341,11 @@ else:
 #
 st.write('RON corrected with the InChiKey correction:', RON_Final.round(1) , 'at +/- 1 ')
 #
+st.write('RON with Mordred descriptors:', Y_sim_predit_Modele_4[0].round(1) , 'at +/- 1 ' )
+#
+st.write('MON with Mordred descriptors:', Y_sim_predit_Modele_MON[0].round(1) , 'at +/- 1 ' )
+#
+st.write('CN with Mordred descriptors:', Y_sim_predit_Modele_CN[0].round(1) , 'at +/- 1 ' )
 
 ######################################################################################################
 ## Bloc Tampon - Bout de code
