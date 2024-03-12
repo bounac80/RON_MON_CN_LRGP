@@ -1,0 +1,8 @@
+matplotlib==3.5.3
+mordred
+rdkit
+joblib==1.1.1
+scikit-learn
+plotly.express
+streamlit_ketcher
+tensorflow
